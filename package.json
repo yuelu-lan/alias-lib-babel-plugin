@@ -1,5 +1,11 @@
 {
+  "name": "alias-lib-babel-plugin",
   "private": true,
+  "description": "解决类似 pro-components 依赖 antd，而 antd 却是通过别名安装时，导致 pro-components 报错的问题",
+  "keywords": [
+    "umi max",
+    "babel plugin"
+  ],
   "author": "南月鹿 <942893986@qq.com>",
   "scripts": {
     "build": "max build",
