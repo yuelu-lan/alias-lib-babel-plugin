@@ -23,7 +23,7 @@ const iPluginOptions: IPluginOptionsType = {
 
 export default (api: IApi) => {
   /**
-   * 先于 .umirc.ts 执行
+   * 先于 .umirc.ts 中配置的 extraBabelPlugins 执行
    */
   api.addExtraBabelPlugins(() => {
     const visitor: Visitor<
