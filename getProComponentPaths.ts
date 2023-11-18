@@ -5,6 +5,12 @@ import path from 'path';
 const getProComponentPaths = () => {
   const result: string[] = [];
 
+  /**
+   * TODO:
+   * umi layout 依赖于 antd，这里先临时这么处理下，后面在看怎么搞
+   */
+  result.push(path.resolve('./src/.umi/plugin-layout'));
+
   fs.readdirSync(path.resolve('./node_modules/@ant-design')).forEach(
     (fileName) => {
       if (!fileName?.includes('pro')) {

@@ -20,8 +20,8 @@
     "@ant-design/icons": "^5.2.6",
     "@ant-design/pro-components": "^2.6.41",
     "@umijs/max": "^4.0.88",
-    "antd": "^5.11.2",
-    "antd-v4": "npm:antd@^4.24.14",
+    "antd": "^2.13.14",
+    "antd-v5": "npm:antd@^5.11.2",
     "yuelu-utils": "^1.0.0"
   },
   "devDependencies": {

@@ -18,7 +18,7 @@ interface IPluginOptionsType {
 
 const iPluginOptions: IPluginOptionsType = {
   libraryNames: ['@ant-design/pro-components', ...getProComponentPaths()],
-  aliasMap: { antd: 'antd-v4' },
+  aliasMap: { antd: 'antd-v5' },
 };
 
 export default (api: IApi) => {

@@ -1,4 +1,4 @@
-import { Modal } from 'antd';
+import { Modal } from 'antd-v5';
 import React, { PropsWithChildren } from 'react';
 
 interface CreateFormProps {

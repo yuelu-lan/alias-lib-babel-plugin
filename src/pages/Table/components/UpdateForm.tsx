@@ -6,7 +6,7 @@ import {
   ProFormTextArea,
   StepsForm,
 } from '@ant-design/pro-components';
-import { Modal } from 'antd';
+import { Modal } from 'antd-v5';
 import React from 'react';
 
 export interface FormValueType extends Partial<API.UserInfo> {

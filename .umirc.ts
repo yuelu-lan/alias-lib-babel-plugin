@@ -6,7 +6,11 @@ export default defineConfig({
     // configProvider: {
     //   iconPrefixCls: 'defineConfig-icon',
     // },
-    // import: false,
+    /**
+     * 这里不能配置 import: true,
+     */
+    import: false,
+    style: 'css',
   },
   access: {},
   model: {},
@@ -40,17 +44,15 @@ export default defineConfig({
   npmClient: 'npm',
   // 开启后 extraBabelIncludes 失效
   mfsu: false,
-  // extraBabelPlugins: [
-  //   [
-  //     require.resolve('./scripts/function-babel-plugins.js'),
-  //     {
-  //       libraryName: [
-  //         '@ant-design/pro-components',
-  //         join(__dirname, './node_modules/@ant-design/pro-table'),
-  //       ],
-  //     },
-  //   ],
-  // ],
+  extraBabelPlugins: [
+    [
+      'import',
+      {
+        libraryName: 'antd',
+        style: 'css', // `style: true` 会加载 less 文件
+      },
+    ],
+  ],
   // node_modules 内的包需要用这个声明，才会执行 extraBabelPlugins
   extraBabelIncludes: ['@ant-design/pro-components', ...getProComponentPaths()],
 });
