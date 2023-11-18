@@ -1,6 +1,14 @@
 import IconContext from '@ant-design/icons/lib/components/Context';
 import { RuntimeConfig } from '@umijs/max';
-import { ConfigProvider } from 'antd';
+import { ConfigProvider as ConfigProviderV5 } from 'antd';
+import { ConfigProvider as ConfigProviderV4 } from 'antd-v4';
+// 由于 antd 组件的默认文案是英文，所以需要修改为中文
+import 'antd-v4/dist/antd.css';
+import zhCN from 'antd-v4/es/locale/zh_CN';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+
+moment.locale('zh-cn');
 
 // 运行时配置
 
@@ -23,14 +31,16 @@ const myIconContext = { prefixCls: 'IconContext-icon' };
 
 export const rootContainer: RuntimeConfig['rootContainer'] = (container) => {
   return (
-    <ConfigProvider
+    <ConfigProviderV5
       componentSize="middle"
       prefixCls="ConfigProvider-antd"
       iconPrefixCls="ConfigProvider-icon"
     >
-      <IconContext.Provider value={myIconContext}>
-        {container}
-      </IconContext.Provider>
-    </ConfigProvider>
+      <ConfigProviderV4 locale={zhCN}>
+        <IconContext.Provider value={myIconContext}>
+          {container}
+        </IconContext.Provider>
+      </ConfigProviderV4>
+    </ConfigProviderV5>
   );
 };

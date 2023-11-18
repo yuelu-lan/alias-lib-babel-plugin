@@ -1,10 +1,12 @@
 import { defineConfig } from '@umijs/max';
+import getProComponentPaths from './getProComponentPaths';
 
 export default defineConfig({
   antd: {
     // configProvider: {
     //   iconPrefixCls: 'defineConfig-icon',
     // },
+    // import: false,
   },
   access: {},
   model: {},
@@ -34,13 +36,21 @@ export default defineConfig({
       component: './Table',
     },
   ],
-  npmClient: 'pnpm',
-  extraBabelPlugins: [
-    // [
-    //   require.resolve('./scripts/function-babel-plugins.js'),
-    //   { libraryName: ['@ant-design/pro-components', 'pro-table'] },
-    // ],
-  ],
-  // // node_modules 内的包需要用这个声明，才会执行 extraBabelPlugins
-  // extraBabelIncludes: ['@ant-design/pro-components', 'antd'],
+  // pnpm yarn 都不行
+  npmClient: 'npm',
+  // 开启后 extraBabelIncludes 失效
+  mfsu: false,
+  // extraBabelPlugins: [
+  //   [
+  //     require.resolve('./scripts/function-babel-plugins.js'),
+  //     {
+  //       libraryName: [
+  //         '@ant-design/pro-components',
+  //         join(__dirname, './node_modules/@ant-design/pro-table'),
+  //       ],
+  //     },
+  //   ],
+  // ],
+  // node_modules 内的包需要用这个声明，才会执行 extraBabelPlugins
+  extraBabelIncludes: ['@ant-design/pro-components', ...getProComponentPaths()],
 });
