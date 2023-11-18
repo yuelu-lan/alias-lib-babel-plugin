@@ -1,7 +1,11 @@
 import { defineConfig } from '@umijs/max';
 
 export default defineConfig({
-  antd: {},
+  antd: {
+    // configProvider: {
+    //   iconPrefixCls: 'defineConfig-icon',
+    // },
+  },
   access: {},
   model: {},
   initialState: {},
@@ -31,4 +35,12 @@ export default defineConfig({
     },
   ],
   npmClient: 'pnpm',
+  extraBabelPlugins: [
+    // [
+    //   require.resolve('./scripts/function-babel-plugins.js'),
+    //   { libraryName: ['@ant-design/pro-components', 'pro-table'] },
+    // ],
+  ],
+  // // node_modules 内的包需要用这个声明，才会执行 extraBabelPlugins
+  // extraBabelIncludes: ['@ant-design/pro-components', 'antd'],
 });
