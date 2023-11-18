@@ -2,6 +2,18 @@
 
 解决类似 pro-components 依赖 antd，而 antd 却是通过别名安装时，导致 pro-components 报错的问题
 
+## 主要文件
+
+`./package.json`
+
+`./umirc.ts`
+
+`./plugin.ts`
+
+`./getProComponentPaths.ts`
+
+`./src/app.tsx`
+
 ## 分支
 
 ### antd5-to-antd4
