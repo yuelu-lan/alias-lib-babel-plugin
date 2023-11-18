@@ -4,11 +4,17 @@
 
 ## 分支
 
-#### antd5-to-antd4
+### antd5-to-antd4
 
 antd5(主) & antd4(副) 共存
 
 将 pro-components 默认引用的 antd5 指向 antd4
+
+### antd2-to-antd5
+
+antd2(主) & antd5(副) 共存
+
+将 pro-components 默认引用的 antd2 指向 antd5
 
 ## umi-max
 
