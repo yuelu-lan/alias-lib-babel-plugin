@@ -30,5 +30,3 @@ export const rootContainer: RuntimeConfig['rootContainer'] = (container) => {
     </ConfigProviderV5>
   );
 };
-
-'test';
